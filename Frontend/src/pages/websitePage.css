@@ -1,0 +1,110 @@
+/* Styles for the entire page */
+.website-page {
+  width: 100%;
+  height: 100vh;
+  background: url("../../public/assets/signup.jpg") no-repeat center
+    center/cover;
+  background-attachment: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-top: 100px; /* To avoid overlap with the fixed navbar */
+  overflow: auto; /* Allow scrolling */
+}
+
+/* Main content container */
+.main-content-website {
+  display: flex;
+  flex: 1;
+  padding: 20px;
+  color: white;
+  /* overflow: auto; Allow content to scroll */
+  text-align: center; /* Center the text inside the container */
+}
+
+.content-section-website {
+  width: 100%;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.6); /* Slightly transparent background */
+  border-radius: 10px;
+  animation: fadeIn 2s;
+}
+
+.content {
+  display: flex;
+  flex-direction: row; /* Arrange children in a row */
+  width: 100%; /* Full width */
+}
+/* Styling for the paragraph */
+.paragraph {
+  flex: 3; /* Takes up 60% of the width */
+  padding-right: 20px; /* Space between paragraph and highlights */
+}
+
+.paragraph p {
+  font-size: 22px; /* Larger font size for better readability */
+  line-height: 1.8; /* Improve readability with line spacing */
+  color: #f0f0f0; /* Light color for better contrast against dark background */
+  margin: 0; /* Remove default margin */
+  padding: 10px; /* Add padding for spacing */
+}
+
+.highlighted {
+  color: #ff5733; /* Colorful for the first word */
+  font-weight: bold;
+}
+
+/* Highlights section */
+.highlights {
+  flex: 2; /* Takes up 40% of the width */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center horizontally */
+  justify-content: center; /* Center vertically */
+  padding-left: 20px; /* Space between paragraph and highlights */
+}
+
+.highlight-item {
+  margin-bottom: 15px; /* Spacing between points */
+  font-size: 18px; /* Slightly larger font size for better readability */
+  color: #f0f0f0; /* Light color for consistency */
+  text-align: center; /* Center text */
+}
+.dynamic-text {
+  font-size: 48px;
+  font-weight: bold;
+  display: inline-block; /* Ensure the text does not stretch */
+  white-space: nowrap; /* Ensure text does not wrap */
+  border-right: 0.15em solid orange; /* Cursor style */
+  overflow: hidden; /* Hide overflow for typing effect */
+  animation: typing 4s steps(8, end) 1s forwards, blink 0.75s step-end infinite;
+}
+
+/* Keyframes for animations */
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 12%;
+  }
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    border-color: transparent;
+  }
+  50% {
+    border-color: orange;
+  }
+}
+
+footer {
+  width: 100%;
+  padding: 20px;
+  background-color: rgba(51, 51, 51, 0.8); /* Slightly transparent background */
+  color: white;
+  text-align: center;
+  position: relative;
+}

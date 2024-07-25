@@ -1,0 +1,522 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
+
+* {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  /* overflow: hidden; Prevent scrolling */
+}
+
+button {
+  background-color: rgba(163, 12, 12, 0.945);
+  padding: 13px 20px;
+  color: white;
+  font-weight: 400;
+  border: none;
+  font-size: 18px;
+  border-radius: 8px;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: rgba(6, 130, 23, 0.845);
+  transform: scale(1.01);
+  transition: 0.5s ease;
+}
+
+.login-page-container {
+  display: flex;
+  height: 100vh; /* Full height of the viewport */
+  width: 100vw; /* Full width of the viewport */
+  a {
+    text-decoration: none;
+    color: rgb(175, 3, 154);
+  }
+  a:hover {
+    cursor: pointer;
+  }
+}
+
+.background-image {
+  position: relative;
+  flex: 4; /* 60% width */
+  background-image: url("/public/assets/signin-banner.svg"); /* Replace with your image path */
+  background-size: cover;
+  background-position: center;
+  height: 100%; /* Ensure the div takes the full height */
+}
+
+.background-image::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 10px; /* Adjust width to control shadow size */
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0),
+    rgba(186, 185, 185, 0.5)
+  );
+}
+
+.form-container {
+  flex: 2; /* 40% width */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background-color: #f8f9fa; /* Optional: light background color for the form */
+  height: 100%; /* Ensure the div takes the full height */
+  position: relative; /* Ensure the div takes the full height */
+}
+
+.form-container-content {
+  position: absolute;
+  top: 40%; /* Adjust this value to move the content up or down */
+  left: 30%; /* Adjust this value to move the content left or right */
+  transform: translate(
+    -10%,
+    -40%
+  ); /* Adjust these values to fine-tune the position */
+}
+.logo {
+  max-width: 100px; /* Adjust the size of the logo */
+  margin-bottom: 20px; /* Space between the logo and the heading */
+}
+.form-container h1 {
+  margin-bottom: 20px;
+}
+
+.form-container p {
+  margin-bottom: 20px;
+}
+
+.form-container input {
+  margin-bottom: 10px;
+  padding: 10px;
+  width: 100%;
+  max-width: 300px; /* Optional: limit the width of input fields */
+}
+
+.form-container button {
+  padding: 10px;
+  width: 100%;
+  max-width: 300px; /* Optional: limit the width of the button */
+}
+
+.signup-page {
+  height: 100vh; /* Full height of the viewport */
+  overflow: hidden; /* Prevent scrolling */
+  background-image: url("./public/assets/signup.jpg"); /* Replace with your image URL */
+  background-size: cover; /* Cover the entire viewport */
+  background-position: center; /* Center the background image */
+  background-repeat: no-repeat; /* Prevent repeating the background image */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.signup-page-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  gap: 24px;
+  padding: 24px;
+  width: 25%;
+  background: rgba(255, 255, 255, 0.7); /* Translucent background */
+  border: 1px solid slategray;
+  border-radius: 10px;
+  backdrop-filter: blur(5px); /* Blur effect */
+}
+
+.signup-page-container h1 {
+  margin-bottom: 20px;
+}
+
+.signup-page-container p {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.signup-page-container a {
+  text-decoration: none;
+  color: rgb(175, 3, 154);
+}
+
+.signup-page-container input {
+  padding: 12px;
+  font-size: 15px;
+  background: none;
+  border-radius: 8px;
+  border: 1px solid slategray;
+  margin-bottom: 10px;
+}
+
+.signup-page-container button {
+  padding: 10px;
+  width: 100%;
+  max-width: 400px; /* Optional: limit the width of the button */
+}
+
+/* Add padding to the top to account for the fixed navbar */
+.otp-page-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 150px;
+  padding: 24px;
+  padding-top: 20px; /* Adjust this value based on your navbar height */
+  background-color: rgb(174, 151, 189);
+  gap: 24px;
+  border-radius: 8px;
+  overflow-y: auto;
+}
+
+.otp-input-container {
+  position: relative;
+  margin-left: 70px;
+
+  input {
+    padding: 6px;
+    font-size: 24px;
+    letter-spacing: 48px;
+    width: 280px !important;
+    border: none;
+    outline: none;
+  }
+
+  .otp-column {
+    position: absolute;
+    top: 0;
+    height: 44px;
+    width: 24px;
+    background-color: rgb(174, 151, 189);
+  }
+
+  .c1 {
+    left: 34px;
+    width: 20px;
+    margin-left: 5px;
+  }
+
+  .c2 {
+    left: 94px;
+    width: 20px;
+    margin-left: 5px;
+  }
+
+  .c3 {
+    left: 156px;
+    width: 20px;
+  }
+
+  .c4 {
+    left: 216px;
+    width: 80px;
+  }
+}
+
+.home-page-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.home-content {
+  display: flex;
+  flex-grow: 1;
+  padding-top: 60px; /* Adjust based on your navbar height */
+}
+
+.path-shower {
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 20px; /* Adjust for spacing between search and path shower */
+  display: flex;
+  align-items: center;
+  margin-top: 20;
+}
+
+.path-shower ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  gap: 2px; /* Space between items */
+}
+
+.path-shower li {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  color: #1a73e8;
+  padding: 0 8px;
+  transition: color 0.3s, text-decoration 0.3s;
+}
+
+.path-shower li:hover {
+  text-decoration: underline;
+  color: #0a66c2; /* Slightly darker color on hover */
+}
+
+.path-shower li::after {
+  content: "/";
+  margin: 0 10px;
+  color: #999;
+  font-weight: bold;
+}
+
+.path-shower li:last-child::after {
+  content: "";
+  margin: 0;
+}
+
+.show-folder-files {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 35px; /* Adjust the gap between folders/files */
+  padding: 30px;
+}
+
+.show-folder-files .folder-file-item {
+  width: 150px; /* Adjust the width of each folder/file */
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+}
+
+.show-folder-files .folder-file-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.show-folder-files .folder-file-item p {
+  margin: 0;
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+}
+
+.show-folder-files .folder-file-item::before {
+  display: block;
+  font-size: 50px;
+  margin-bottom: 10px;
+}
+
+.folder-file-item.folder::before {
+  content: "\f07b"; /* Folder icon */
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  color: #ffa500; /* Orange color for folders */
+}
+
+.folder-file-item.image-file::before {
+  content: "\f1c5"; /* Image file icon */
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  color: #4caf50; /* Green color for image files */
+}
+
+.folder-file-item.music-file::before {
+  content: "\f001"; /* Music file icon */
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  color: #2196f3; /* Blue color for music files */
+}
+
+.folder-file-item.video-file::before {
+  content: "\f03d"; /* Video file icon */
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  color: #ff5722; /* Red color for video files */
+}
+
+.folder-file-item.default-file::before {
+  content: "\f071"; /* Font Awesome's exclamation-triangle for invalid or generic file */
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  color: #ff6f6f; /* A color that indicates an error or invalid file, adjust as needed */
+  font-size: 36px; /* Adjust the size as needed */
+}
+
+.show-folder-files h2 {
+  width: 100%;
+  text-align: center;
+  color: #999;
+}
+
+.sidebar {
+  width: 20%;
+  background-color: #f8f9fa;
+  padding: 20px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 80;
+  left: 0;
+  bottom: 0;
+  overflow-y: auto;
+  margin-top: 20px;
+}
+
+.new-btn {
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 15px;
+  color: white;
+  background-color: #276dcf;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.new-btn i {
+  margin-right: 5px;
+}
+.new-btn:hover {
+  background-color: rgba(6, 130, 23, 0.845);
+}
+
+.sidebar-option {
+  display: block;
+  width: 100%;
+  padding: 10px 15px;
+  background-color: white;
+  color: black;
+  border: none;
+  border-radius: 5px;
+  text-align: left;
+  cursor: pointer;
+  margin-bottom: 10px;
+  transition: background-color 0.3s;
+}
+
+.sidebar-option:hover {
+  background-color: #ccc;
+}
+
+.main-content {
+  margin-left: 20%;
+  padding: 20px;
+  flex-grow: 1;
+  margin-top: 30px;
+}
+
+.main-content h1 {
+  font-family: "Poppins", sans-serif;
+  font-size: 36px;
+  font-weight: 800;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #333;
+}
+
+.search-bar {
+  width: 100%;
+  padding: 12px 15px;
+  font-size: 18px;
+  border: 1px solid #ccc;
+  border-radius: 25px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  outline: none;
+  transition: border-color 0.3s ease;
+  font-family: "Poppins", sans-serif;
+}
+
+.search-bar:focus {
+  border-color: #276dcf;
+}
+
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000; /* Ensure popup is above other content */
+}
+
+.popup {
+  background: white;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  width: 400px;
+  max-width: 90%;
+  text-align: center;
+}
+
+.popup h2 {
+  margin-top: 0;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.popup input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+.popup-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.popup-buttons button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.popup-buttons button:first-child {
+  background-color: #007bff;
+  color: white;
+}
+
+.popup-buttons button:last-child {
+  background-color: #ccc;
+}
+
+.popup-buttons button:last-child:hover {
+  background-color: #ff6666;
+  color: white;
+}
