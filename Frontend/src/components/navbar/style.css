@@ -27,6 +27,7 @@
 .navbar-menu {
   list-style-type: none;
   display: flex;
+  margin-left: 180px;
   gap: 20px;
 }
 
@@ -36,6 +37,18 @@
 
 .navbar-menu a {
   text-decoration: none;
+  color: white;
+}
+
+.navbar-right-item {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Space between the name and the button */
+}
+
+.user-name {
+  font-size: 21px;
+  margin: 0;
   color: white;
 }
 

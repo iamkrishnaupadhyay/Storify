@@ -8,6 +8,8 @@ import HomePage from "./src/pages/homePage";
 import OtpPage from "./src/pages/otpPage";
 import WebsitePage from "./src/pages/websitePage";
 import { useSelector } from "react-redux";
+import AboutUsPage from "./src/components/AboutUs/index.js";
+import ContactUs from "./src/components/ContactUs/index.js";
 
 const AppRouter = () => {
     const { isAuthorized, isEmailVerified } = useSelector((e) => e.auth);
@@ -38,6 +40,14 @@ const AppRouter = () => {
         {
             path: "/otp",
             element: isAuthorized && !isEmailVerified ? <OtpPage /> : <Navigate to="/storify" />,
+        },
+        {
+            path: "/aboutus",
+            element: <AboutUsPage />,
+        },
+        {
+            path: "/contactus",
+            element: <ContactUs />,
         },
 
 

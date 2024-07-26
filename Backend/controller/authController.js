@@ -19,13 +19,22 @@ const generateJWTToken = (obj) => {
 
 const signup = async (req, res) => {
     try {
-        const { email, password } = req.body;
+        const { name, email, password } = req.body;
         console.log(email);
         console.log(password);
+        console.log(name);
         if (!password || !email) {
             res.status(400).json({
                 status: "fail",
                 message: "Please provide email and password",
+                data: [],
+            });
+            return;
+        }
+        if (!name) {
+            res.status(400).json({
+                status: "fail",
+                message: "Please provide Name",
                 data: [],
             });
             return;
@@ -41,7 +50,7 @@ const signup = async (req, res) => {
             return;
         }
 
-        const newUser = await UserModel.create({ email, password });
+        const newUser = await UserModel.create({ name, email, password });
 
         res.status(201);
         res.json({
@@ -51,6 +60,7 @@ const signup = async (req, res) => {
                 user: {
                     _id: newUser._id,
                     email: newUser.email,
+                    name: newUser.name,
                     isEmailVerified: newUser.isEmailVerified,
                 },
             },
@@ -108,6 +118,7 @@ const login = async (req, res) => {
             token: generateJWTToken({
                 _id: user._id,
                 email: user.email,
+                name: user.name,
             })
         })
 

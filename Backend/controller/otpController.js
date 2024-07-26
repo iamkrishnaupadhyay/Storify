@@ -75,7 +75,7 @@ const sendOTPMail = async (email, otp) => {
             <body>
                 <div class="email-container">
                     <div class="header">
-                        <h1>Cloud Home </h1>
+                        <h1>Storify </h1>
                     </div>
                     <div class="content">
                         <h2>Your OTP Code</h2>
@@ -85,7 +85,7 @@ const sendOTPMail = async (email, otp) => {
                     </div>
                     <div class="footer">
                         <p>If you didn't request this, please ignore this email.</p>
-                        <p>&copy; 2024 Cloud Home. All rights reserved.</p>
+                        <p>&copy; 2024 Storify. All rights reserved.</p>
                     </div>
                 </div>
             </body>
@@ -93,7 +93,7 @@ const sendOTPMail = async (email, otp) => {
         `;
 
         const response = await mailer.sendMail({
-            from: "abcd",
+            from: "Storify",
             to: email,
             subject: "OTP",
             html: htmlContent,

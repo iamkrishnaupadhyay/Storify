@@ -9,12 +9,13 @@ const SignupPage = () => {
 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [name, setName] = useState("")
     const { signup } = useSignup();
 
     const handleSubmit = () => {
         const validation = true;
         if (validation) {
-            signup({ email, password });
+            signup({ name, email, password });
         } else {
             toast.error("validation failed");
         }
@@ -24,6 +25,12 @@ const SignupPage = () => {
             <div className="signup-page-container">
                 <h1>Sign Up</h1>
                 <p>Already have an account? <Link to="/login">Login</Link></p>
+                <input
+                    type="text"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                    placeholder="Enter your name..."
+                />
                 <input
                     type="text"
                     value={email}
