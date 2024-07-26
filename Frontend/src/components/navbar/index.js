@@ -33,7 +33,7 @@ const Navbar = () => {
             <div className="navbar-left-item">
                 <a href="/" className="navbar-logo">
                     <img src={cloudimg} alt="Logo" className="logo" />
-                    Storifyyy
+                    Storify
                 </a>
             </div>
             <div>
