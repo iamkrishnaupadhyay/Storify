@@ -41083,7 +41083,7 @@ const Navbar = ()=>{
                             lineNumber: 35,
                             columnNumber: 21
                         }, undefined),
-                        "Storifyyy"
+                        "Storify"
                     ]
                 }, void 0, true, {
                     fileName: "src/components/navbar/index.js",
