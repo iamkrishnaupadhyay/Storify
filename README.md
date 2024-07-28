@@ -1,2 +1,2 @@
 # Storify
-This website is still under developing.
+This website is still under development 
